@@ -36,10 +36,10 @@ class obstacle(cylinder):
     def move(self):
         top.pos.x=top.pos.x-Vx*dt
         bot.pos.x=bot.pos.x-Vx*dt
-        if top.x+2*m.top.radius<-m*mag(scene.range):
+        if top.x+2*top.radius<-m*mag(scene.range):
             modifyGap()
-            top.x=mag(scene.range)*m+m*top.radius
-            bot.x=mag(scene.range)*m+m*bot.radius
+            top.x=mag(scene.range)*m+top.radius
+            bot.x=mag(scene.range)*m+bot.radius
         
 
     #change gap
