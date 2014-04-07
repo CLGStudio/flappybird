@@ -33,7 +33,7 @@ class obstacle(cylinder):
          return True
 
     #movement
-    def move(self):
+    def moveObstacle(self):
         top.pos.x=top.pos.x-Vx*dt
         bot.pos.x=bot.pos.x-Vx*dt
         if top.x+2*top.radius<-m*mag(scene.range):
