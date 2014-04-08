@@ -6,8 +6,6 @@ import random
 
 gap = 125
 m = 1/2
-dt=1
-Vx=1
 class obstacle(cylinder):
     #default 
     def __init__(self,screenWidth,screenRange):
@@ -34,19 +32,19 @@ class obstacle(cylinder):
         return check
 
     #movement
-    def moveObstacle(self):
+    def moveObstacle(self,dt,Vx,sceneRange):
         top.pos.x=top.pos.x-Vx*dt
         bot.pos.x=bot.pos.x-Vx*dt
-        if top.x+2*top.radius<-m*mag(scene.range):
-            modifyGap()
-            top.x=mag(scene.range)*m+top.radius
-            bot.x=mag(scene.range)*m+bot.radius
+        if top.x+2*top.radius<-m*mag(sceneRange):
+            self.modifyGap()
+            self.top.x=mag(sceneRange)*m+self.top.radius
+            self.bot.x=mag(sceneRange)*m+self.bot.radius
         
 
     #change gap
-    def modifyGap(self):
-        r=(screen.range-gap)*random.random()
-        rest=screen.range-r-gap
+    def modifyGap(self,screeRange):
+        r=(screenRange-gap)*random.random()
+        rest=screenRange-r-gap
         self.top.axis.y=2*r
         self.bot.axis.y=2*rest
         
