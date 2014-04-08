@@ -10,26 +10,30 @@ scene.width = 500
 scene.autoscale = 0
 
 #create ball
-#ball=sphere(pos=(0,-10,0),radius=30,color=color.red)
 b1=bird()
 
 #create pipe obstacles
 obs1=obstacle(500,500)
-#obs1=cylinder(pos=(150,150,0),axis=(0,150,0),radius=75/2,color=color.green)
 #obs2=cylinder(pos=(150,-150,0),axis=(0,150,0),radius=75/2,color=color.green)
 
+#create obstacle velocity constants
+dt=.5
+Vx=25
+
 #handle when user presses arrow key{
-#def keyInput(keyIn):
-#    if checkCollision(bird) == False:0
- #       if (keyIn.key == 'up' or keyIn.key == 'space') and ball.y < m*scene.width-r:#if UP and the ball is not at the top of the screen, can move
-  #          ball.pos = ball.pos + (0,40,0)
+def keyInput(keyIn):
+    if obs1.detection(b1) == True:
+        if (keyIn.key == 'up' or keyIn.key == 'space'):#if UP and the ball is not at the top of the screen, can move
+            b1.jump()
+            print 'jumped'
 #}
         
-#scene.bind('keydown', keyInput)#when the user presses a key, go to key handler function
+scene.bind('keydown', keyInput)#when the user presses a key, go to key handler function
 
 #while no collision has been detected{
-while obs1.detection(b1) == False:
-	#moveBird()
-	#movePipes()
+while obs1.detection(b1) == True and b1.bottom == False:
+    sleep(.0001)
+    b1.moveBird(dt)
+    obs1.moveObstacle(dt,Vx,500)
     print 'r'
 #}
