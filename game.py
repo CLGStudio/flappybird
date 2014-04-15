@@ -20,6 +20,9 @@ obs1=obstacle(500,500)
 dt=.5
 Vx=25
 
+#create player and draw score
+p1=player()
+
 #handle when user presses arrow key{
 def keyInput(keyIn):
     if obs1.detection(b1) == True:
