@@ -18,7 +18,7 @@ obs1=obstacle(500,500)
 
 #create obstacle velocity constants
 dt=.5
-Vx=25
+Vx=15
 
 #create player and draw score
 p1=player()
