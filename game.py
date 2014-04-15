@@ -2,6 +2,7 @@ from __future__ import division
 from visual import*
 from obstacle import*
 from bird import*
+from player import*
 import math
 
 #set the screen window size
