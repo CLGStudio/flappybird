@@ -44,13 +44,12 @@ class obstacle(cylinder):
             self.top.x=sceneRange+self.top.radius
             self.bot.x=sceneRange+self.bot.radius
         
-
     #change gap
-    def modifyGap(self,screenRange):
-        r=(screenRange-gap)*random.random()
-        rest=screenRange-r-gap
-        self.top.axis.y=2*r
-        self.bot.axis.y=2*rest
+    def modifyGap(self,screenRange): 
+        r = random.randint(1,screenRange-gap-1) 
+        rest = screenRange - r - gap 
+        self.top.axis.y = -r 
+        self.bot.axis.y = rest 
         
 
 
