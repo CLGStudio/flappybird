@@ -33,13 +33,13 @@ class obstacle():
                     print '2'
                       
             elif abs(vector1.x)<= 2*self.top.radius: 
-                if abs(abs(vector1.y)-abs(bird.ball.radius))<=self.top.axis.y or abs(abs(vector2.y)-abs(bird.ball.radius))<=self.bot.axis.y: 
+                if abs(abs(vector1.y)-bird.ball.radius)<=abs(self.top.axis.y) or abs(abs(vector2.y)-bird.ball.radius)<=self.bot.axis.y: 
                     check = False
                     print '3'
         return check 
   
     #movement 
-    def moveObstacle(self,dt,Vx,screenRange): 
+    def moveObstacle(self,dt,Vx,screenRange,p1): 
         self.top.pos.x=self.top.pos.x-Vx*dt 
         self.bot.pos.x=self.bot.pos.x-Vx*dt 
         if self.top.x+self.top.radius<-screenRange: 
