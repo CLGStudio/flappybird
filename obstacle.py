@@ -5,15 +5,13 @@ from player import*
 import math
 import random
 
-gap = 90
-st = 'afsadfsad'
-print st[0:2:6]
+gap = 200
 m = 1/2
 class obstacle():
     #default 
     def __init__(self,x):
-        self.top = cylinder(pos=(x,500,0),axis=(0,-455,0),radius=45,color=color.green,material=materials.wood)
-        self.bot = cylinder(pos=(x,-500,0),axis=(0,455,0),radius=45,color=color.green,material=materials.wood)
+        self.top = cylinder(pos=(x,500,0),axis=(0,-400,0),radius=45,color=color.green,material=materials.wood)
+        self.bot = cylinder(pos=(x,-500,0),axis=(0,400,0),radius=45,color=color.green,material=materials.wood)
 
     #collision detection
     def detection(self,bird):
@@ -56,7 +54,7 @@ class obstacle():
     #change gap
     def modifyGap(self,screenRange): 
         r = random.randint(1,screenRange-gap-1) 
-        rest = screenRange - r - gap 
+        rest = screenRange - r 
         self.top.axis.y = -r 
         self.bot.axis.y = rest
         
