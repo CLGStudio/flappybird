@@ -5,15 +5,15 @@ from player import*
 import math
 import random
 
-gap = 30
+gap = 90
 st = 'afsadfsad'
 print st[0:2:6]
 m = 1/2
 class obstacle():
     #default 
     def __init__(self,x):
-        self.top = cylinder(pos=(x,500,0),axis=(0,-235,0),radius=45,color=color.green,material=materials.wood)
-        self.bot = cylinder(pos=(x,-500,0),axis=(0,235,0),radius=45,color=color.green,material=materials.wood)
+        self.top = cylinder(pos=(x,500,0),axis=(0,-455,0),radius=45,color=color.green,material=materials.wood)
+        self.bot = cylinder(pos=(x,-500,0),axis=(0,455,0),radius=45,color=color.green,material=materials.wood)
 
     #collision detection
     def detection(self,bird):
