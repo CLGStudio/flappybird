@@ -46,44 +46,45 @@ def StartGame():
         obs2.moveObstacle(dt,Vx,500,p1)
         rate(1000)
 
+restart = True
+while restart == True:
+    #open file to load highscores and prepare to write
+    fileA = open("highscore.txt","a+")
+    fileI = open("highscore.txt","r")
 
-#open file to load highscores and prepare to write
-fileA = open("highscore.txt","a+")
-fileI = open("highscore.txt","r")
+    try:
+        highscore=fileI.read()
+        if highscore=='':
+            highscore='0'
+        highscore=int(highscore)
+    except IOError:
+        highscore=0
+        
+    temp = highscore
 
-try:
-    highscore=fileI.read()
-    if highscore=='':
-        highscore='0'
-    highscore=int(highscore)
-except IOError:
-    highscore=0
+    print temp
     
-temp = highscore
-
-print temp
-
-fileO = open("highscore.txt","w")
-
-#create highscore label
-highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
-
-#create ball
-b1=bird()
-
-#create pipe obstacles
-obs1=obstacle(sceneRange)
-obs2=obstacle(sceneRange*2)
-#obs2=cylinder(pos=(150,-150,0),axis=(0,150,0),radius=75/2,color=color.green)
-
-#create obstacle velocity constants
-dt=.01
-Vx=25
-
-#create player and draw score
-p1=player()
-
-startLabel = label(pos=(0,0,0),text='Press Enter to start!')
+    fileO = open("highscore.txt","w")
+    
+    #create highscore label
+    highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
+    
+    #create ball
+    b1=bird()
+    
+    #create pipe obstacles
+    obs1=obstacle(sceneRange)
+    obs2=obstacle(sceneRange*2)
+    #obs2=cylinder(pos=(150,-150,0),axis=(0,150,0),radius=75/2,color=color.green)
+    
+    #create obstacle velocity constants
+    dt=.01
+    Vx=25
+    
+    #create player and draw score
+    p1=player()
+    
+    startLabel = label(pos=(0,0,0),text='Press Enter to start!')
 
 #moveObs(obs1,b1,dt,Vx)
 #moveObs(obs2,b1,dt,Vx)
