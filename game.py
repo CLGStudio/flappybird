@@ -5,7 +5,7 @@ from bird import*
 from player import*
 import math
 
-#open file
+#open file to load highscores and prepare to write
 fileO = open("highscore.txt","w")
 fileI = open("highscore.txt","r")
 
@@ -18,6 +18,9 @@ except IOError:
     highscore=0
     
 temp = highscore
+
+#create highscore label
+highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
 
 #set the screen window size
 sceneRange = 500
