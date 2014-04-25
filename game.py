@@ -5,6 +5,14 @@ from bird import*
 from player import*
 import math
 
+#set the screen window size
+sceneRange = 500
+sceneWidth = 500
+scene.range = sceneRange
+scene.width = sceneWidth
+scene.autoscale = 0
+scene.title = 'Flappy Bird!'
+
 #open file to load highscores and prepare to write
 fileO = open("highscore.txt","w")
 fileI = open("highscore.txt","r")
@@ -21,14 +29,6 @@ temp = highscore
 
 #create highscore label
 highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
-
-#set the screen window size
-sceneRange = 500
-sceneWidth = 500
-scene.range = sceneRange
-scene.width = sceneWidth
-scene.autoscale = 0
-scene.title = 'Flappy Bird!'
 
 #create ball
 b1=bird()
