@@ -9,6 +9,8 @@ import math
 fileO = open("highscore.txt","w")
 fileI = open("highscore.txt","r")
 
+highscore=''
+
 try:
     highscore=fileI.read()
     if highscore=='':
