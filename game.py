@@ -16,7 +16,7 @@ scene.title = 'Flappy Bird!'
 #open file to load highscores and prepare to write
 #fileO = open("highscore.txt","w")
 #fileI = open("highscore.txt","r")
-file = open("highscore.txt","w+")
+file = open("highscore.txt","r+")
 
 try:
     highscore=file.read()
