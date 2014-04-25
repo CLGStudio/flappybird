@@ -71,27 +71,6 @@ def keyInput(keyIn):
             fileA.close()
             fileI.close()
             fileO.close()
-            restartLabel = label(pos=(0,0,0), text='Press R to restart!')
-        if keyIn.key == 'r':
-            fileA = open("highscore.txt","a+")
-            fileI = open("highscore.txt","r")
-            try:
-                highscore=fileI.read()
-                if highscore=='':
-                    highscore='0'
-                highscore=int(highscore)
-            except IOError:
-                highscore=0
-            temp = highscore
-            print temp
-            fileO = open("highscore.txt","w")
-            highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
-            b1=bird()
-            obs1=obstacle(sceneRange)
-            obs2=obstacle(sceneRange*2)
-            p1=player()
-            startLabel = label(pos=(0,0,0),text='Press Enter to start!')
-            
 #}
 
         
