@@ -6,8 +6,8 @@ from player import*
 import math
 
 #open file
-fileI = open("highscore.txt","r")
 fileO = open("highscore.txt","w")
+fileI = open("highscore.txt","r")
 
 try:
     highscore=fileI.read()
