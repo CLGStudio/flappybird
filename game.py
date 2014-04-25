@@ -6,10 +6,11 @@ from player import*
 import math
 
 #open file
-file = open("highscore.txt")
+fileI = open("highscore.txt","r")
+fileO = open("highscore.txt","w")
 
 try:
-    highscore=file.read()
+    highscore=fileI.read()
     highscore=int(highscore)
 except IOError:
     highscore=0
@@ -50,8 +51,11 @@ def keyInput(keyIn):
             StartGame()
             if p1.value>highscore:
                 highscore=p1.value
-                file.write(highscore)
+                fileO.write(highscore)
+                fileI.close()
+                fileO.close()
 #}
+
         
 scene.bind('keydown', keyInput)#when the user presses a key, go to key handler function
 
