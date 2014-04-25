@@ -19,8 +19,6 @@ except IOError:
     
 temp = highscore
 
-print temp
-
 #set the screen window size
 sceneRange = 500
 sceneWidth = 500
@@ -55,7 +53,7 @@ def keyInput(keyIn):
         if keyIn.key == '\n':
             startLabel.visible = False
             StartGame()
-            if p1.value>highscore:
+            if p1.value>temp:
                 highscore=p1.value
                 fileO.write(highscore)
                 fileI.close()
