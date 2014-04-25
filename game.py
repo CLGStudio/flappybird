@@ -9,8 +9,6 @@ import math
 fileO = open("highscore.txt","w")
 fileI = open("highscore.txt","r")
 
-highscore=''
-
 try:
     highscore=fileI.read()
     if highscore=='':
@@ -18,6 +16,10 @@ try:
     highscore=int(highscore)
 except IOError:
     highscore=0
+    
+temp = highscore
+
+print temp
 
 #set the screen window size
 sceneRange = 500
