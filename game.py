@@ -55,6 +55,7 @@ def keyInput(keyIn):
             StartGame()
             if p1.value>temp:
                 highscore=p1.value
+                highscore=string(highscore)
                 fileO.write(highscore)
                 fileI.close()
                 fileO.close()
