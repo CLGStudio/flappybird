@@ -19,7 +19,7 @@ fileO = open("highscore.txt","w")
 
 
 try:
-    highscore=fileI.read()
+    highscore=fileI.readline()
     if highscore=='':
         highscore='0'
     highscore=int(highscore)
