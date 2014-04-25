@@ -85,6 +85,7 @@ while restart == True:
     p1=player()
     
     startLabel = label(pos=(0,0,0),text='Press Enter to start!')
+    input()
 
 #moveObs(obs1,b1,dt,Vx)
 #moveObs(obs2,b1,dt,Vx)
