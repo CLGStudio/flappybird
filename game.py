@@ -28,6 +28,8 @@ Vx=25
 #create player and draw score
 p1=player()
 
+startLabel = label(pos=(0,0,0),text='Press Enter to start!')
+
 #handle when user presses arrow key{
 def keyInput(keyIn):
     if obs1.detection(b1) == True:
@@ -35,6 +37,7 @@ def keyInput(keyIn):
             b1.jump()
             #print 'jumped'
         if keyIn.key == '\n':
+            startLabel.visible = False
             StartGame()
 #}
         
