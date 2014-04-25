@@ -11,7 +11,7 @@ file = open("highscore.txt")
 try:
     highscore=file.read()
     highscore=int(highscore)
-except:
+except IOError:
     highscore=0
 
 #set the screen window size
