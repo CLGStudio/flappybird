@@ -14,12 +14,9 @@ scene.autoscale = 0
 scene.title = 'Flappy Bird!'
 
 #open file to load highscores and prepare to write
-try:
-    fileI = open("highscore.txt","r")
-    fileO = open("highscore.txt","w")
-except:
-    fileO = open("highscore.txt","w")
-    fileI = open("highscore.txt","r")
+fileI = open("highscore.txt","a+")
+fileO = open("highscore.txt","w")
+
 
 try:
     highscore=fileI.read()
