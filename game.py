@@ -5,6 +5,15 @@ from bird import*
 from player import*
 import math
 
+#open file
+file = open("highscore.txt")
+
+try:
+    highscore=file.read()
+    highscore=int(highscore)
+except:
+    highscore=0
+
 #set the screen window size
 sceneRange = 500
 sceneWidth = 500
@@ -39,6 +48,9 @@ def keyInput(keyIn):
         if keyIn.key == '\n':
             startLabel.visible = False
             StartGame()
+            if p1.value>highscore:
+                highscore=p1.value
+                file.write(highscore)
 #}
         
 scene.bind('keydown', keyInput)#when the user presses a key, go to key handler function
