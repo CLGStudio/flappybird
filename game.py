@@ -14,10 +14,11 @@ scene.autoscale = 0
 scene.title = 'Flappy Bird!'
 
 #open file to load highscores and prepare to write
-fileI = open("highscore.txt","a+")
+fileA = open("highscore.txt","a+")
+fileI = open("highscore.txt","r+")
 
 try:
-    highscore=fileI.readline()
+    highscore=fileI.read()
     if highscore=='':
         highscore='0'
     highscore=int(highscore)
@@ -28,7 +29,7 @@ temp = highscore
 
 print temp
 
-fileO = open("highscore.txt","w")
+#fileO = open("highscore.txt","w")
 
 #create highscore label
 highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
@@ -62,9 +63,9 @@ def keyInput(keyIn):
             if p1.value>temp:
                 highscore=p1.value
                 highscore=str(highscore)
-                fileO.write(highscore)
+                fileI.write(highscore)
+                fileA.close()
                 fileI.close()
-                fileO.close()
 #}
 
         
