@@ -15,8 +15,6 @@ scene.title = 'Flappy Bird!'
 
 #open file to load highscores and prepare to write
 fileI = open("highscore.txt","a+")
-fileO = open("highscore.txt","w")
-
 
 try:
     highscore=fileI.readline()
@@ -27,6 +25,8 @@ except IOError:
     highscore=0
     
 temp = highscore
+
+fileO = open("highscore.txt","w")
 
 #create highscore label
 highLabel = label(pos=(-350,-350,0), text='Highscore: %d' % temp, box = False)
