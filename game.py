@@ -26,6 +26,8 @@ except IOError:
     
 temp = highscore
 
+print temp
+
 fileO = open("highscore.txt","w")
 
 #create highscore label
