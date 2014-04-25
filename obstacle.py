@@ -54,8 +54,8 @@ class obstacle():
 
     #change gap
     def modifyGap(self,screenRange): 
-        r = random.randint(1,screenRange-gap-1) 
-        rest = screenRange - r 
+        r = random.randint(1,screenRange-1) 
+        rest = screenRange - r + gap
         self.top.axis.y = -r 
         self.bot.axis.y = rest
         
