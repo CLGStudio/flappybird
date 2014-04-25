@@ -78,7 +78,7 @@ def keyInput(keyIn):
             try:
                 highscore=fileI.read()
                 if highscore=='':
-                highscore='0'
+                    highscore='0'
                 highscore=int(highscore)
             except IOError:
                 highscore=0
