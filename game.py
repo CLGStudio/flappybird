@@ -64,9 +64,13 @@ def keyInput(keyIn):
                 highscore=p1.value
                 highscore=str(highscore)
                 fileO.write(highscore)
-                fileA.close()
-                fileI.close()
-                fileO.close()
+            else:
+                highscore=temp
+                highscore=str(temp)
+                file0.write(highscore)
+            fileA.close()
+            fileI.close()
+            fileO.close()
 #}
 
         
