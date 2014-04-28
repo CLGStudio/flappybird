@@ -5,12 +5,18 @@ from player import*
 import math
 import random
 
+#variable to store how large the gap is
 gap = 250
+#a constant
 m = 1/2
+#varialbe to store how large the started axis is
 axisStart = 375
+
+#class obstacle
 class obstacle():
     #default 
     def __init__(self,x):
+        #top and bot are both cylinders
         self.top = cylinder(pos=(x,500,0),axis=(0,-axisStart,0),radius=45,color=color.green,material=materials.wood)
         self.bot = cylinder(pos=(x,-500,0),axis=(0,axisStart,0),radius=45,color=color.green,material=materials.wood)
 
@@ -20,7 +26,7 @@ class obstacle():
         vector1 = bird.ball.pos-self.top.pos
         vector2 = bird.ball.pos-self.bot.pos
         
-        #length of the center of an obstacle to a corner
+        #length of the position of an obstacle to a corner
         c1=sqrt(self.top.radius**2+(self.top.axis.y)**2)
         c2=sqrt(self.bot.radius**2+(self.bot.axis.y)**2)
         
